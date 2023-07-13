@@ -1,0 +1,12 @@
+
+.square{
+	position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.register,.login{
+	border: #0d6efd 2px solid;
+    width: 550px;
+    border-radius: 10px;
+}
