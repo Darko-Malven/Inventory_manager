@@ -102,8 +102,9 @@
 				</nav>
 			</div>
 			<div class="dashboard">
+				
 				<h1 style="padding: 20px;">Dashboard</h1>
-				<div class="row dashboard_section">
+				<div class="row dashboard_section-special">
 					<div class="col-lg-8 col-md-8 col-sm-8 col-8 sales_info">
 						<h2 style="font-family: 'Ubuntu', sans-serif; font-size: x-large;">Sales activity</h2>
 								<div class="info text-center">
@@ -122,7 +123,7 @@
 									<h3>87</h3>
 									<p>To be invoiced</p>
 								</div>
-						</div>
+					</div>
 						<div class=" col-lg-4 col-md-4 col-sm-4 col-4 inventory">
 						<!--<h2 style="font-family: 'Ubuntu', sans-serif; font-size: 25px;
 						position: absolute; top: 171px;">Inventory summary</h2>-->
@@ -134,27 +135,25 @@
 							<div class="quantity">
 								<label class="text-void">Quantity to be received</label>
 								<label class="qty">123</label>
-								</div>
+							</div>
 						</div>
 				</div>
-				
-				<div class="main_square">
 					<div class="row dashboard_section">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-6 sales">
 							<div class="sub_square">
 								<div class="tittle">
 									<label class="">PRODUCT DETAILS</label>
 								</div>
-								<div class="item text-void">
+								<div class="item text-void" style="color: #d50000;">
 									<label>Low stock items</label>
 									<a href="#" class="qty_item">
-										<label style="margin-left: 640px;">10</label>
+										<label>10</label>
 									</a>
 								</div>
 								<div class="item text-void">
 									<label>All items</label>
 									<a href="#" class="qty_item">
-										<label style="margin-left: 640px;">50 </label>
+										<label>50</label>
 									</a>
 								</div>
 							</div>
@@ -196,15 +195,14 @@
 										<tr>Confirmed</tr>
 									</thead>
 									<tbody>
-										<tr></tr>
-										<tr></tr>
-										<tr></tr>
+											<tr>
+												<th></th>
+											</tr>
 									</tbody>
 								</table>
 							</div>
 						</div>
 					</div>
-				</div>
 				<div class="summary">
 
 				</div>
