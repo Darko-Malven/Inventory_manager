@@ -30,9 +30,9 @@ public class Inventory {
 	@NotNull
 	private String numProduct;
 	@Size(min=0)
-	private Integer quantity;
+	private Integer quantity=0;
 	@Size(min=0)
-	private Integer totalQuantity;
+	private Integer totalQuantity=0;
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;

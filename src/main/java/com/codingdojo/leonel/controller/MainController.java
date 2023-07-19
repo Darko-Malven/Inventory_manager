@@ -1,5 +1,7 @@
 package com.codingdojo.leonel.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +19,17 @@ public class MainController {
 	
 	@GetMapping("/mainpage")
 	public String mainPage(HttpSession session,Model model) {
-		/*User userInSession = (User) session.getAttribute("userInSession");
+		User userInSession = (User) session.getAttribute("userInSession");
 		if(userInSession==null) {
 			return "redirect:/ingreso";
 		}
-		model.addAttribute("user", userInSession);*/
+		Integer totalProducts=service.totalProducts();
+		Integer totalAmount=service.totalAmount();
+		List<User> userList = service.allUser();
+		model.addAttribute("totalProducts",totalProducts);
+		model.addAttribute("totalAmount",totalAmount);
+		model.addAttribute("userList",userList);
+		model.addAttribute("user", userInSession);
 		return "main.jsp";
 	}
-	
-	
 }

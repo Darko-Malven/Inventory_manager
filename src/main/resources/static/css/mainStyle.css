@@ -156,6 +156,8 @@ main{
     vertical-align: top;
 }
 .quantity{
+	width: 60%;
+	display: inline-block;
 	margin-bottom: 15px;
 	border: 1px solid #dae1e4;
     border-radius: 7px;

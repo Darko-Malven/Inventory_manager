@@ -1,5 +1,6 @@
 package com.codingdojo.leonel.service;
 
+import java.util.List;
 import java.util.Random;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -7,13 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.codingdojo.leonel.models.Inventory;
 import com.codingdojo.leonel.models.User;
+import com.codingdojo.leonel.repository.InventoryRepository;
 import com.codingdojo.leonel.repository.UserRepository;
 
 @Service
 public class AppServices {
 	@Autowired
 	private UserRepository userRepo;
+	@Autowired
+	private InventoryRepository invRepo;
 	public User register(User newUser, BindingResult result) {
 			
 			Integer userUnique = new Random().nextInt(200- 1);
@@ -57,6 +62,9 @@ public class AppServices {
 	public User findUser(Long id) {
 		return userRepo.findById(id).orElse(null);
 	}
+	public List<User> allUser(){
+		return userRepo.findAll();
+	}
 	public User saveUser(User user) {
 		String pass_encript = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
 		user.setPassword(pass_encript);
@@ -65,4 +73,19 @@ public class AppServices {
 	public void deleteUser(Long id) {
         userRepo.deleteById(id);
     }
+	public Inventory saveProduct(Inventory product) {
+		return invRepo.save(product);
+	}
+	public Inventory findProduct(String numProduct) {
+		return invRepo.findByNumProduct(numProduct);
+	}
+	public List<Inventory> finAllProducts(){
+		return invRepo.findAll();
+	}
+	public Integer totalAmount() {
+		return invRepo.totalAmount();
+	}
+	public Integer totalProducts() {
+		return invRepo.totalProducts();
+	}
 }

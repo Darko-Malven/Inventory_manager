@@ -130,7 +130,9 @@
 						<h2>Inventory summary</h2>
 							<div class="quantity">
 								<label class="text-void">Quantity in hand</label>
-								<label class="qty"">123</label>
+								<a>
+									<label class="qty">${totalAmount}</label>
+								</a>
 							</div>
 							<div class="quantity">
 								<label class="text-void">Quantity to be received</label>
@@ -152,8 +154,13 @@
 								</div>
 								<div class="item text-void">
 									<label>All items</label>
+									<c:if test="${totalProducts==null}">
+										<a href="#" class="qty_item">
+											<label>0</label>
+										</a>
+									</c:if>
 									<a href="#" class="qty_item">
-										<label>50</label>
+										<label>${totalProducts}</label>
 									</a>
 								</div>
 							</div>
@@ -190,14 +197,32 @@
 								<div class="tittle">SALES ORDER</div>	
 								<table class="table table-borderless">
 									<thead>
-										<tr>User</tr>
-										<tr>Date</tr>
-										<tr>Confirmed</tr>
+										<tr>
+											<th>User</th>
+											<th>Product</th>
+											<th>Product number</th>
+											<th>Amount</th>
+											<th>User number</th>
+											<!--<th>Date</th>
+											<th>Confirmed</th>-->
+											<th>Position</th>
+										</tr>
 									</thead>
 									<tbody>
+										<c:forEach items="${userList}" var="users">
 											<tr>
-												<th></th>
+												<c:if test="${not empty users.manager.numProduct}">
+													<td>${users.name}</td>
+													<td>${users.manager.product}</td>
+													<td>${users.manager.numProduct}</td>
+													<td>${users.manager.quantity}</td>
+													<td>${users.manager.numProduct}</td>
+													<c:if test="${users.userType==2}">
+														<td>Manipulador</td>
+													</c:if>
+												</c:if>
 											</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 							</div>
