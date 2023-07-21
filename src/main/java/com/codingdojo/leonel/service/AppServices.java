@@ -74,7 +74,14 @@ public class AppServices {
         userRepo.deleteById(id);
     }
 	public Inventory saveProduct(Inventory product) {
+		
 		return invRepo.save(product);
+	}
+	public Inventory findIdProduct(Long id) {
+		return invRepo.findById(id).orElse(null);
+	}
+	public void deleteProduct(Long id) {
+		invRepo.deleteById(id);
 	}
 	public Inventory findProduct(String numProduct) {
 		return invRepo.findByNumProduct(numProduct);

@@ -21,81 +21,50 @@
 		    		<div class="collapse navbar-collapse d-flex justify-content-start" id="navbarNav">
 		    			<ul class="navbar-nav menu">
 		    				<li class="nav-item">
-		    					<a class="nav-link" href="#"  style="color:white;">Dashboard</a>
+		    					<a class="nav-link" href="/mainpage"  style="color:white; margin-left: 14px;
+								margin-top: 10px;">Dashboard</a>
 							</li>
 
 		        			<li class="nav-item nav_click">
 								<div class="nav_button">
-									<a href="#" class="nav-link" style="color:white;">Inventory</a>
-									<img src="assets/arrow.svg" class="list__arrow">
+									<a href="/inventory" class="nav-link" style="color:white; margin-left: 14px;
+									margin-top: 10px;">Inventory</a>
 								</div>
-								<ul class="nav_list">
-									<li class="nav_list-inside">
-										<a class="nav-link nav_link-inside" href="#" style="color:white;">estoy dentro</a>
-									</li>
-									
-								</ul>
 							</li>
 							
 		        			<li class="nav-item">
-		          				<a class="nav-link" href="#" style="color:white;">Sales</a>
+		          				<a class="nav-link" href="#" style="color:white; margin-left: 14px;
+								  margin-top: 10px;">Sales</a>
 		        			</li>
 		        			<li class="nav-item">
-		          				<a class="nav-link" href="#" style="color:white;">Purchases</a>
+		          				<a class="nav-link" href="#" style="color:white; margin-left: 14px;
+								  margin-top: 10px;">Purchases</a>
 		        			</li>
 		        			<li class="nav-item" style="margin-top:50px;">
-		        				<a class="nav-link" href="#" style="color:white;">Logout</a>
+		        				<a class="nav-link" href="/logout" style="color:white; margin-left: 14px;
+								margin-top: 10px;">Logout</a>
 		        			</li>
 		      			</ul>		
 		      		</div>
 		  	</nav>
 		</div>
-	<!--
-			<nav>
-				<ul class="lista">
-					<li class="lista_item">
-						<div class="lista_button">
-							<a href="#" class="nav_link">Dashboard</a>
-						</div>
-					</li>
-					<li class="lista_item list_button-click">
-						<a href="#" class="nav_link">Inventory</a>
-						<img src="assets/arrow.svg" class="lista__arrow">
-					</li>
-					<ul class="lista_show">
-						<li class="lista_inside">
-							<a href="#" class="nav_link nav_link-inside" >Estoy dentro</a>
-						</li>
-						
-					</ul>
-					<li class="lista_button">
-						<div class="lista_button">
-							<a href="#" class="nav_link">Sales</a>
-						</div>
-					</li>
-				</ul>
-			</nav>
--->
+
+
 		<main>
 			<div style="background-color:#cdcccc;">
 				<nav class="navbar navbar-expand-lg bg-body-tertiary " style="border-bottom: 1px solid #dde5e8;">
 					<div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
 						<ul class="navbar-nav menu2">
 						<li class="nav-item">
-							<a class="nav-link" href="#" style="color:black;">Perfil</a>
+							<a class="nav-link" href="#" style="color:black; margin-right: 40px;">Perfil</a>
 						</li>
 						<li class="nav-item">
 							<div class="nav-button">
-								<a href="#" class="nav-link" style="color:black;">Help</a>
+								<a href="#" class="nav-link" style="color:black; margin-right: 40px;">Help</a>
 							</div>
-							<ul class="nav-list">
-								<li class="nav-list-inside">
-									<a href="#" class="nav-link nav-link-inside">estoy dentro</a>
-								</li>
-							</ul>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#" style="color:black;">Account</a>
+							<a class="nav-link" href="#" style="color:black; margin-right: 40px;">Account</a>
 						</li>
 						</ul>						
 					</div>
@@ -125,9 +94,8 @@
 								</div>
 					</div>
 						<div class=" col-lg-4 col-md-4 col-sm-4 col-4 inventory">
-						<!--<h2 style="font-family: 'Ubuntu', sans-serif; font-size: 25px;
-						position: absolute; top: 171px;">Inventory summary</h2>-->
-						<h2>Inventory summary</h2>
+						<h2 style="font-family: 'Ubuntu', sans-serif; font-size: 25px;
+						position: absolute; top: 171px; margin-top:33px; ">Inventory summary</h2>
 							<div class="quantity">
 								<label class="text-void">Quantity in hand</label>
 								<a>
@@ -194,11 +162,12 @@
 						</div>
 						<div class=" col-lg-8 col-md-8 col-sm-8 col-8 sales_order">
 							<div class="sub_square">	
-								<div class="tittle">SALES ORDER</div>	
+								<div class="tittle">LAST PRODUCTS</div>	
 								<table class="table table-borderless">
 									<thead>
 										<tr>
 											<th>User</th>
+											<th>User id</th>
 											<th>Product</th>
 											<th>Product number</th>
 											<th>Amount</th>
@@ -213,6 +182,7 @@
 											<tr>
 												<c:if test="${not empty users.manager.numProduct}">
 													<td>${users.name}</td>
+													<td>${users.numUser}</td>
 													<td>${users.manager.product}</td>
 													<td>${users.manager.numProduct}</td>
 													<td>${users.manager.quantity}</td>

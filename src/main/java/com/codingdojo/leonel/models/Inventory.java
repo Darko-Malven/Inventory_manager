@@ -13,9 +13,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -29,10 +29,8 @@ public class Inventory {
 	private String product;
 	@NotNull
 	private String numProduct;
-	@Size(min=0)
-	private Integer quantity=0;
-	@Size(min=0)
-	private Integer totalQuantity=0;
+	@Min(value=1)
+	private Integer quantity;
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
@@ -41,7 +39,6 @@ public class Inventory {
 	
 	@OneToMany(mappedBy="manager",fetch=FetchType.LAZY)
 	private List<User> myInventory;
-	
 	
 	public Inventory() {
 	}
@@ -68,13 +65,6 @@ public class Inventory {
 	}
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
-	}
-	
-	public Integer getTotalQuantity() {
-		return totalQuantity;
-	}
-	public void setTotalQuantity(Integer totalQuantity) {
-		this.totalQuantity = totalQuantity;
 	}
 	public List<User> getMyInventory() {
 		return myInventory;

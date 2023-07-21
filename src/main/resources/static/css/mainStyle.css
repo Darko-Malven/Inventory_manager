@@ -19,71 +19,9 @@
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 15px;
 	position:relative;
-	margin-left:4px;
+	margin-left: 4px;
 	text-decoration:none;
 }
-
-/*
-.nav__link{
-    color: #303440;
-    display: block;
-    padding: 15px 0;
-    text-decoration: none;
-}
-.lista{
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-}
-
-.nav__link--inside{
-    border-radius: 6px ;
-    padding-left: 20px;
-    text-align: left;
-}
-
-.nav__link--inside:hover{
-    background: #F6F8FA;
-}
-.lista__item{
-    list-style: none;
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    
-}
-
-.lista__item--click{
-    cursor: pointer;
-}
-
-.lista__button{
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    width: 70%;
-    margin: 0 auto;
-}
-
-.arrow .lista__arrow{
-    transform: rotate(90deg);
-}
-
-.list__arrow{
-    margin-left: auto;
-    transition: transform .3s;
-}
-
-.lista__show{
-    width: 80%;
-    margin-left: auto;
-    border-left: 2px solid #303440;
-    list-style: none;
-    transition: height .4s;
-    height: 0;
-}
-*/
-
 
 .menu a::after{
 	content: "";
@@ -158,7 +96,7 @@ main{
 .quantity{
 	width: 60%;
 	display: inline-block;
-	margin-bottom: 15px;
+	margin-top: 33px;
 	border: 1px solid #dae1e4;
     border-radius: 7px;
     background-color: #fff;

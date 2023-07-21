@@ -16,7 +16,7 @@ import com.codingdojo.leonel.service.AppServices;
 public class MainController {
 	@Autowired
 	private AppServices service;
-	
+
 	@GetMapping("/mainpage")
 	public String mainPage(HttpSession session,Model model) {
 		User userInSession = (User) session.getAttribute("userInSession");
@@ -32,4 +32,18 @@ public class MainController {
 		model.addAttribute("user", userInSession);
 		return "main.jsp";
 	}
+	@GetMapping("/inventory")
+	public String inventoryPage(HttpSession session,Model model){
+		User userInSession = (User) session.getAttribute("userInSession");
+		if(userInSession==null) {
+			return "redirect:/ingreso";
+		}
+		model.addAttribute("user", userInSession);
+		List<User> userList = service.allUser();
+		model.addAttribute("userList",userList);
+		
+		return "inventory.jsp";
+	}
+	
+	 
 }
